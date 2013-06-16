@@ -5,10 +5,11 @@
 ```
 var caisson = require('caisson');
 
-caisson({
-    awsConfig: JSON.parse(fs.readFileSync('aws-config.json')),
+caisson.init({
+    awsConfig: {},
     domain: 'mysite.com'
-}).init();
+});
+caisson.deploy();
 ```
 
 ### CLI
