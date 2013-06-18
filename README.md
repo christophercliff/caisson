@@ -1,39 +1,41 @@
 # Caisson
 
+A utility to deploy your static website to AWS. Configures S3 hosting, Route 53 DNS, and CloudFront CDN to serve `http://yoursite.com` in one command.
+
+## Installation
+
+Install globally via npm to use the CLI.
+
+```
+$ npm install -g caisson
+```
+
 ## Usage
 
 ```
-var caisson = require('caisson');
-
-caisson.init({
-    awsConfig: 'aws-config.json',
-    domain: 'mysite.com'
-});
-
-caisson.deploy();
-```
-
-### CLI
-
-```
-$ caisson init --domain mysite.com --aws-config aws-config.json
+$ caisson init yoursite.com
 $ caisson deploy
 ```
 
-## What it does
+## Also...
 
-1. Create S3 bucket `mysite.com`
-2. Create S3 bucket `www.mysite.com`
-3. Create Route 53 hosted zone and records
-4. Create CloudFront distribution
-5. Copy `./build` directory to S3
+You need a valid AWS account. To configure, create a file `aws-config.json` in the root of your project (add this file to `.gitignore`):
 
-Write a `caisson.json` file:
-
-```js
+```json
 {
-    site: 'mysite.com',
-    redirect: 'www.mysite.com',
-    cdn: 'd11sswu48y9djf.cloudfront.net'
+  "accessKeyId": "YOUR_KEY",
+  "secretAccessKey": "YOUR_SECRET",
+  "region": "us-east-1"
 }
+```
+
+You also need a domain name. After initialization, you will need to update your DNS to point to Amazon's name servers.
+
+## Tests
+
+Install and run.
+
+```
+$ npm install
+$ npm test
 ```
