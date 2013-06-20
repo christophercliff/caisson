@@ -22,23 +22,23 @@ Configure AWS by creating a file `aws-config.json` in the root of your project:
 }
 ```
 
-Initialize the services:
+Initialize AWS services:
 
 ```
 $ caisson init yoursite.com
 ```
 
-Then copy your `build` directory to S3:
+Then push your files to S3:
 
 ```
-$ caisson deploy
+$ caisson push
 ```
 
-You will need to manually update your DNS provier to use to Route 53's name servers. Caisson will log the name server information in a file `caisson.json`.
+You will need to manually update your DNS provider to use to Route 53's name servers. Caisson will log name server information in a file `caisson.json` in the root your project.
 
 ## Running Tests
 
-Install the dependencies and run.
+Clone the repo, install the dependencies and run.
 
 ```
 $ npm install
