@@ -2,6 +2,8 @@
 
 A utility to deploy your static website to AWS. Configures S3 hosting, Route 53 DNS, and CloudFront CDN to serve `http://yoursite.com` with one command.
 
+[![Build Status](https://secure.travis-ci.org/christophercliff/caisson.png?branch=master)](https://travis-ci.org/christophercliff/caisson)
+
 ## Installation
 
 Install using [npm](https://npmjs.org).
