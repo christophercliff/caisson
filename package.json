@@ -2,8 +2,15 @@
   "name": "caisson",
   "version": "0.0.0",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
-  "description": "",
-  "keywords": [],
+  "description": "A utility to deploy your static website to AWS. Configures S3 hosting, Route 53 DNS, and CloudFront CDN to serve `http://yoursite.com` with one command.",
+  "homepage": "http://caisson.co",
+  "keywords": [
+    "aws",
+    "static site generator",
+    "jekyll",
+    "wintersmith",
+    "octopress"
+  ],
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
