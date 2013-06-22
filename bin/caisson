@@ -10,7 +10,7 @@ program
 
 program
     .command('init [domain]')
-    .description('initialize the services')
+    .description('initialize the aws services')
     .option('-a, --aws-config [path]', 'path to aws config json')
     .action(function(domain, options){
         caisson.init({

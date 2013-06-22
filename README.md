@@ -26,13 +26,13 @@ Configure AWS by creating a file `aws-config.json` in the root of your project:
 }
 ```
 
-Initialize AWS services:
+Initialize the AWS services:
 
 ```
 $ caisson init yoursite.com
 ```
 
-Then push your files to S3:
+Then push your `build` directory to S3:
 
 ```
 $ caisson push
