@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+    fs = require('fs'),
+    caisson = require('../'),
+    pkg = require('../package.json');
+
+program
+    .version(pkg.version);
+
+program
+    .command('init [domain]')
+    .description('initialize the services')
+    .option('-a, --aws-config [path]', 'path to aws config json')
+    .action(function(domain, options){
+        caisson.init({
+            domain: domain,
+            awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
+        }, function(err){
+            if (err) return console.log(err);
+            return console.log('Initialized without errors')
+        });
+    });
+
+program.parse(process.argv);
