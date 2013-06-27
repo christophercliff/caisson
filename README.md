@@ -1,14 +1,12 @@
 # Caisson
 
-A utility to deploy your static website to AWS. Configures S3 hosting, Route 53 DNS, and CloudFront CDN to serve `http://yoursite.com` with one command.
-
-Recommended for use with static site generators like [Wintersmith](http://wintersmith.io/) or [Jekyll](http://jekyllrb.com/).
+A command line utility for deploying your static website to AWS. Configures S3, Route 53, and CloudFront to serve `http://yoursite.com` with one command.
 
 [![Build Status](https://secure.travis-ci.org/christophercliff/caisson.png?branch=master)](https://travis-ci.org/christophercliff/caisson)
 
 ## Installation
 
-Install using [npm](https://npmjs.org).
+Install with [npm](https://npmjs.org):
 
 ```
 $ npm install -g caisson
@@ -16,29 +14,27 @@ $ npm install -g caisson
 
 ## Quick Start
 
-Configure AWS by creating a file `aws-config.json` in the root of your project:
-
-```json
-{
-  "accessKeyId": "YOUR_KEY",
-  "secretAccessKey": "YOUR_SECRET",
-  "region": "us-east-1"
-}
-```
-
 Initialize the AWS services:
 
 ```
 $ caisson init yoursite.com
 ```
 
-Then push your `build` directory to S3:
+Then push your build directory to S3:
 
 ```
 $ caisson push
 ```
 
-You will need to manually update your DNS provider to use to Route 53's name servers. Caisson will log name server information in a file `caisson.json` in the root your project.
+You will need to manually update your DNS to use to Route 53's name servers. Caisson will create a log of this information in a file `caisson.json`.
+
+## Help
+
+For additional help, see:
+
+```
+$ caission --help
+```
 
 ## Running Tests
 
