@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
-    cli = require('../lib/cli');
+    cli = require('../lib/cli/');
 
 program
     .version(require('../package.json').version);
