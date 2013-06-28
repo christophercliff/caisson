@@ -45,4 +45,4 @@ $ npm install
 $ npm test
 ```
 
-##### a project by [@ctcliff](https://twitter.com/ctcliff)
+###### A project by [@ctcliff](https://twitter.com/ctcliff)
