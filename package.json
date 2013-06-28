@@ -6,11 +6,18 @@
   "homepage": "http://caisson.co",
   "keywords": [
     "aws",
+    "s3",
+    "route 53",
+    "cloudfront",
     "static site generator",
+    "static website",
     "jekyll",
     "wintersmith",
     "octopress"
   ],
+  "bin": {
+    "caisson": "./bin/caisson"
+  },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },

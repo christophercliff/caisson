@@ -12,7 +12,7 @@ Install with [npm](https://npmjs.org):
 $ npm install -g caisson
 ```
 
-## Quick Start
+## Get Started
 
 Initialize the AWS services:
 
@@ -36,7 +36,7 @@ For additional help, see:
 $ caission --help
 ```
 
-## Running Tests
+## Tests
 
 Clone the repo, install the dependencies and run.
 
