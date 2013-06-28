@@ -1,75 +1,15 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
-    fs = require('fs'),
-    caisson = require('../'),
-    cli = require('../lib/cli'),
-    pkg = require('../package.json');
-
-var AWS_PATH = './aws-config.json';
-
-var onKeyPrompt = function (err, key) {
-
-
-
-};
+    cli = require('../lib/cli');
 
 program
-    .version(pkg.version);
+    .version(require('../package.json').version);
 
 program
     .command('init [domain]')
-    .description('initialize the aws services')
-    .option('-a, --aws-config [path]', 'path to aws config json')
-    .action(function(domain, options){
-        console.log(111);
-        var awsConfig;
-        fs.exists(AWS_PATH, function(exists){
-            if (!exists)
-            {
-                return program.prompt('AWS key: ', function(awsKeyId){
-                    program.prompt('AWS secret: ', function(secretAccessKey){
-                        program.prompt('AWS region (us-east-1): ', function(region){
-                            awsConfig = {
-                                awsKeyId: awsKeyId || '',
-                                secretAccessKey: secretAccessKey || '',
-                                region: region || 'us-east-1'
-                            };
-                            fs.writeFile(AWS_PATH, JSON.stringify(awsConfig));
-                            caisson.init({
-                                domain: domain,
-                                awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
-                            }, function(err){
-                                if (err) return console.log(err);
-                                return console.log('init complete without errors')
-                            });
-                        });
-                    });
-                });
-            }
-            caisson.init({
-                domain: domain,
-                awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
-            }, function(err){
-                if (err) return console.log(err);
-                return console.log('init complete without errors')
-            });
-        })
-
-    });
-
-program
-    .command('push [build]')
-    .description('pushes the build directory to s3')
-    .option('-a, --aws-config [path]', 'path to aws config json')
-    .action(function(build, options){
-        caisson.push({
-            build: build || './build',
-            awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
-        }, function(err){
-            if (err) return console.log(err);
-            return console.log('push complete without errors')
-        });
-    });
+    .description('Initialize the AWS services')
+    .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
+    .action(cli.init);
 
 program.parse(process.argv);
