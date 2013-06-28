@@ -3,7 +3,16 @@
 var program = require('commander'),
     fs = require('fs'),
     caisson = require('../'),
+    cli = require('../lib/cli'),
     pkg = require('../package.json');
+
+var AWS_PATH = './aws-config.json';
+
+var onKeyPrompt = function (err, key) {
+
+
+
+};
 
 program
     .version(pkg.version);
@@ -13,13 +22,40 @@ program
     .description('initialize the aws services')
     .option('-a, --aws-config [path]', 'path to aws config json')
     .action(function(domain, options){
-        caisson.init({
-            domain: domain,
-            awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
-        }, function(err){
-            if (err) return console.log(err);
-            return console.log('init complete without errors')
-        });
+        console.log(111);
+        var awsConfig;
+        fs.exists(AWS_PATH, function(exists){
+            if (!exists)
+            {
+                return program.prompt('AWS key: ', function(awsKeyId){
+                    program.prompt('AWS secret: ', function(secretAccessKey){
+                        program.prompt('AWS region (us-east-1): ', function(region){
+                            awsConfig = {
+                                awsKeyId: awsKeyId || '',
+                                secretAccessKey: secretAccessKey || '',
+                                region: region || 'us-east-1'
+                            };
+                            fs.writeFile(AWS_PATH, JSON.stringify(awsConfig));
+                            caisson.init({
+                                domain: domain,
+                                awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
+                            }, function(err){
+                                if (err) return console.log(err);
+                                return console.log('init complete without errors')
+                            });
+                        });
+                    });
+                });
+            }
+            caisson.init({
+                domain: domain,
+                awsConfig: JSON.parse(fs.readFileSync(options.awsConfig || './aws-config.json'))
+            }, function(err){
+                if (err) return console.log(err);
+                return console.log('init complete without errors')
+            });
+        })
+
     });
 
 program
