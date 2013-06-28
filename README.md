@@ -26,7 +26,7 @@ Then push your build directory to S3:
 $ caisson push
 ```
 
-You will need to manually update your DNS to use to Route 53's name servers. Caisson will create a log of this information in a file `caisson.json`.
+You need to manually update your DNS to use Route 53's name servers. Caisson will log this information in `caisson.json`.
 
 ## Help
 
@@ -44,3 +44,5 @@ Clone the repo, install the dependencies and run.
 $ npm install
 $ npm test
 ```
+
+##### a project by [@ctcliff](https://twitter.com/ctcliff)
