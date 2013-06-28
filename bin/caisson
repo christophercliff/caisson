@@ -12,4 +12,10 @@ program
     .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
     .action(cli.init);
 
+program
+    .command('push [folder]')
+    .description('Pushes the folder to S3')
+    .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
+    .action(cli.push);
+
 program.parse(process.argv);
