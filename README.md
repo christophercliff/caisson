@@ -44,5 +44,3 @@ Clone the repo, install the dependencies and run.
 $ npm install
 $ npm test
 ```
-
-###### A project by [@ctcliff](https://twitter.com/ctcliff)
