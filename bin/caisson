@@ -8,7 +8,7 @@ program
 
 program
     .command('init [domain]')
-    .description('Initialize the AWS services for the domain')
+    .description('Initializes the AWS services for the domain')
     .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
     .action(cli.init);
 
