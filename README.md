@@ -1,12 +1,14 @@
 # Caisson
 
-A command line utility for deploying your static website to AWS. Configures S3, Route 53, and CloudFront to serve `http://yoursite.com` with one command.
+A utility for deploying your static website to AWS.
+
+Caisson sets up S3, Route 53, and CloudFront and deploys `http://yoursite.com` in one command.
 
 [![Build Status](https://secure.travis-ci.org/christophercliff/caisson.png?branch=master)](https://travis-ci.org/christophercliff/caisson)
 
 ## Installation
 
-Install with [npm](https://npmjs.org):
+Install with [npm](https://npmjs.org/package/caisson):
 
 ```
 $ npm install -g caisson

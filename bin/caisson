@@ -14,7 +14,7 @@ program
 
 program
     .command('push [folder]')
-    .description('Pushes the folder to S3')
+    .description('Pushes the folder to S3 (./build)')
     .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
     .action(cli.push);
 
