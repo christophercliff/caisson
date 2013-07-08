@@ -8,13 +8,13 @@ program
 
 program
     .command('init [domain]')
-    .description('Initializes the AWS services for the domain')
+    .description('Initializes AWS for the domain')
     .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
     .action(cli.init);
 
 program
-    .command('push [folder]')
-    .description('Pushes the folder to S3 (./build)')
+    .command('push [dir]')
+    .description('Pushes the build directory to S3 (./build)')
     .option('-a, --aws-config [path]', 'Path to `aws-config.json`')
     .action(cli.push);
 

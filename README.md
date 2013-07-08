@@ -1,10 +1,8 @@
 # Caisson
 
-A utility for deploying your static website to AWS.
+## Deploy your static website to AWS
 
-Caisson sets up S3, Route 53, and CloudFront and deploys `http://yoursite.com` in one command.
-
-[![Build Status](https://secure.travis-ci.org/christophercliff/caisson.png?branch=master)](https://travis-ci.org/christophercliff/caisson)
+Caisson initializes [S3](http://aws.amazon.com/s3/), [Route 53](http://aws.amazon.com/route53/), and [CloudFront](http://aws.amazon.com/cloudfront/) and deploys your site in one command.
 
 ## Installation
 
@@ -16,7 +14,7 @@ $ npm install -g caisson
 
 ## Get Started
 
-Initialize the AWS services:
+Initialize AWS:
 
 ```
 $ caisson init yoursite.com
