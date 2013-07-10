@@ -2,7 +2,7 @@
   "name": "caisson",
   "version": "0.0.2",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
-  "description": "A utility to deploy your static website to AWS. Configures S3 hosting, Route 53 DNS, and CloudFront CDN to serve `http://yoursite.com` with one command.",
+  "description": "Deploy your static website to AWS",
   "homepage": "http://caisson.co",
   "keywords": [
     "aws",
