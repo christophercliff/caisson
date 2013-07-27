@@ -1,6 +1,6 @@
 {
   "name": "caisson",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
   "description": "Deploy your static website to AWS",
   "homepage": "http://caisson.co",
