@@ -52,3 +52,6 @@ $ npm test
 ## License
 
 MIT License, see [LICENSE](https://github.com/christophercliff/caisson/blob/master/LICENSE.md) for details.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/christophercliff/caisson/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
