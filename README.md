@@ -9,7 +9,7 @@ Mix and match the following features:
 - __static web hosting__ with [AWS S3]()
 - __CDN__ with [AWS CloudFront]()
 - __root domain__ DNS with [AWS Route 53]()
-- __HTTPS everything__ with a [DigitalOcean]() droplet
+- __HTTPS__ with an nginx SSL reverse proxy running on a [DigitalOcean]() droplet
 - __SSL certificate__ provisioning with [DNSimple]()
 
 > These services were selected based on cost, reliability and ease-of-use. Please [create an issue]() if you think you've found a better provider.
@@ -34,7 +34,7 @@ When the services are up, push your build to AWS S3:
 $ caisson push
 ```
 
-And drop services when you're finished:
+And shut down services when you're finished:
 
 ```
 $ caisson down
