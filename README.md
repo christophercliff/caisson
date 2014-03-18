@@ -6,24 +6,36 @@ Caisson is a *pluggable* cloud deployment utility. It aims to make it easy to de
 
 ## Usage
 
-Provisioning operations are bundled into plugins and can be mixed and matched as needed. For a simple example, you could provision an S3 bucket and upload your build directory to it using:
+Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, you can provision an S3 bucket and upload your build directory to it using:
 
 ```js
-Caisson()
+var caisson = Caisson.create()
+
+caisson
     .use(s3())
     .up()
+    .then(caisson.push)
+    .done(function(){
+
+    })
 ```
 
-For a more complex example, let's say we wanted to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`:
+For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `youdomain.com`, provision a DigitalOcean micro instance and install an SSL forward proxy:
 
 ```js
-Caisson()
+var caisson = Caisson.create()
+
+caisson
     .use(s3())
     .use(cloudfront())
     .use(route53())
     .use(sslCert())
     .use(sslProxy())
     .up()
+    .then(caisson.push)
+    .done(function(){
+
+    })
 ```
 
 ## Plugins
