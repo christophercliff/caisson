@@ -11,8 +11,7 @@ Provisioning operations are bundled into plugins and can be mixed and matched as
 ```js
 Caisson()
     .use(s3())
-    .provision()
-    .deploy()
+    .up()
 ```
 
 For a more complex example, let's say we wanted to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`:
@@ -24,8 +23,7 @@ Caisson()
     .use(route53())
     .use(sslCert())
     .use(sslProxy())
-    .provision()
-    .deploy()
+    .up()
 ```
 
 ## Plugins
