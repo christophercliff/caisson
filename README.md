@@ -2,11 +2,11 @@
 
 ## Deploy your static website to the cloud
 
-Caisson is a *pluggable* cloud deployment utility. It aims to make it easy to deploy a static website to the cloud services you already use. You pay the service providers, but Caisson handles the moving parts for free.
+Caisson is a *pluggable* cloud deployment utility for static websites. It aims to make it easy to deploy a static website to the cloud services you already use.
 
 ## Usage
 
-Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, you can provision an S3 bucket and upload your build directory to it using:
+Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, you can provision an S3 bucket and upload your build directory:
 
 ```js
 var caisson = Caisson.create()
@@ -18,7 +18,7 @@ caisson
     .done(done)
 ```
 
-For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean micro instance and install an SSL proxy:
+For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean Droplet and install an nginx SSL proxy with your certificate:
 
 ```js
 caisson
