@@ -22,31 +22,42 @@
     "static site generator",
     "jekyll",
     "wintersmith",
-    "metalsmith"
+    "metalsmith",
+    "utility"
   ],
   "main": "./lib/",
   "bin": {
     "caisson": "./bin/caisson"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/jshint ./lib/ ./test/ && ./node_modules/.bin/mocha --reporter spec --require should"
   },
   "dependencies": {
-    "async": "0.2.9",
-    "aws-sdk": "1.7.0",
-    "uuid": "1.4.1",
-    "underscore": "1.4.4",
-    "commander": "1.2.0",
-    "s3-sync": "0.1.1",
-    "readdirp": "0.3.1",
-    "level": "0.10.0",
-    "highland": "^1.19.1",
-    "own": "0.0.7",
-    "ware": "^0.2.1"
+    "bluebird": "^1.1.1",
+    "own": "^0.0.7",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "mocha": "1.7.4",
-    "should": "1.2.1",
-    "sinon": "1.7.2"
+    "async": "^0.2.10",
+    "jshint": "^2.4.4",
+    "mocha": "^1.18.2",
+    "should": "^3.2.0"
+  },
+  "jshintConfig": {
+      "eqeqeq": true,
+      "immed": true,
+      "latedef": "nofunc",
+      "newcap": true,
+      "quotmark": "single",
+      "trailing": true,
+      "unused": true,
+      "asi": true,
+      "boss": true,
+      "expr": true,
+      "laxbreak": true,
+      "laxcomma": true,
+      "scripturl": true,
+      "sub": true,
+      "loopfunc": true
   }
 }

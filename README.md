@@ -15,16 +15,12 @@ caisson
     .use(s3())
     .up()
     .then(caisson.push)
-    .done(function(){
-
-    })
+    .done(done)
 ```
 
-For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `youdomain.com`, provision a DigitalOcean micro instance and install an SSL forward proxy:
+For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean micro instance and install an SSL proxy:
 
 ```js
-var caisson = Caisson.create()
-
 caisson
     .use(s3())
     .use(cloudfront())
@@ -33,12 +29,12 @@ caisson
     .use(sslProxy())
     .up()
     .then(caisson.push)
-    .done(function(){
-
-    })
+    .done(done)
 ```
 
 ## Plugins
+
+TODO: Idempotence
 
 - [caisson-aws-s3][#]
 - [caisson-aws-cloudfront][#]
@@ -52,6 +48,12 @@ Install with npm:
 
 ```
 $ npm install -g caisson
+```
+
+## Tests
+
+```
+$ npm test
 ```
 
 ## License
