@@ -36,9 +36,9 @@ caisson
 
 TODO: Idempotence
 
-- [caisson-aws-s3][#]
-- [caisson-aws-cloudfront][#]
-- [caisson-aws-route53][#]
+- [caisson-s3][s3]
+- [caisson-cloudfront][#]
+- [caisson-route53][#]
 - [caisson-digitalocean-ssl-proxy][#]
 - [caisson-dnsimple-ssl-cert][#]
 
@@ -62,3 +62,4 @@ MIT License, see [LICENSE][license] for details.
 
 [#]: #
 [license]: https://github.com/christophercliff/caisson/blob/master/LICENSE.md
+[s3]: https://github.com/christophercliff/caisson-s3
