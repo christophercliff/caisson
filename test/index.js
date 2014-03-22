@@ -8,7 +8,7 @@ describe('Caisson', function(){
         var caisson = Caisson.create()
         caisson
             .use({
-                up: function (callback) {
+                up: function (c, callback) {
                     breadcrumb.push('a')
                     process.nextTick(function(){
                         breadcrumb.push('b')
@@ -17,7 +17,7 @@ describe('Caisson', function(){
                 }
             })
             .use({
-                up: function (callback) {
+                up: function (c, callback) {
                     breadcrumb.push('c')
                     process.nextTick(function(){
                         breadcrumb.push('d')
@@ -38,7 +38,7 @@ describe('Caisson', function(){
         var caisson = Caisson.create()
         caisson
             .use({
-                up: function (callback) {
+                up: function (c, callback) {
                     breadcrumb.push('a')
                     process.nextTick(function(){
                         breadcrumb.push('b')
@@ -47,7 +47,7 @@ describe('Caisson', function(){
                 }
             })
             .use({
-                up: function (callback) {
+                up: function (c, callback) {
                     breadcrumb.push('c')
                     process.nextTick(function(){
                         breadcrumb.push('d')
@@ -63,6 +63,18 @@ describe('Caisson', function(){
             breadcrumb.join('').should.equal('abcdabcd')
             return done()
         })
+    })
+
+    it('should run in series and promise', function(done){
+        Caisson.create()
+            .use({
+                up: function (c, callback) {
+                    c.should.be.an.Object
+                    process.nextTick(callback)
+                }
+            })
+            .up()
+            .done(done)
     })
 
 })
