@@ -6,7 +6,7 @@ Caisson is a *pluggable* cloud deployment utility for static websites. It makes 
 
 ## Usage
 
-Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, you can provision an S3 bucket and upload your build directory:
+Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, the following will provision an S3 bucket and upload your build directory:
 
 ```js
 var caisson = Caisson.create()
