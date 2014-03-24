@@ -4,7 +4,7 @@
 
 Caisson is a *pluggable* cloud deployment utility for static websites. It makes it easy to deploy your static website to your favorite cloud services.
 
-## Usage
+## JavaScript Usage
 
 Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, the following will provision an S3 bucket and upload your build directory:
 
@@ -21,6 +21,8 @@ caisson
 For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean Droplet and install an nginx SSL proxy with your certificate:
 
 ```js
+var caisson = Caisson.create()
+
 caisson
     .use(s3())
     .use(cloudfront())
@@ -30,6 +32,32 @@ caisson
     .up()
     .then(caisson.push)
     .done(done)
+```
+
+## CLI Usage
+
+Caisson ships with a command line utility that reads plugin data from `caisson.json`:
+
+```json
+{
+  use: [
+    {
+      "name": "caisson-s3",
+      "options": {}
+    }
+  ]
+}
+```
+
+```
+$ caisson up
+$ caisson push
+```
+
+For a complete API reference, use:
+
+```
+$ caisson --help
 ```
 
 ## Plugins
@@ -45,7 +73,7 @@ caisson
 Install with npm:
 
 ```
-$ npm install -g caisson
+$ npm install caisson
 ```
 
 ## Tests
