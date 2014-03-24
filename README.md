@@ -34,8 +34,6 @@ caisson
 
 ## Plugins
 
-TODO: Idempotence
-
 - [caisson-s3][s3]
 - [caisson-cloudfront][#]
 - [caisson-route53][#]
