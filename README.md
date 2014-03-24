@@ -2,7 +2,7 @@
 
 ## Deploy your static website to the cloud
 
-Caisson is a *pluggable* cloud deployment utility for static websites. It aims to make it easy to deploy a static website to the cloud services you already use.
+Caisson is a *pluggable* cloud deployment utility for static websites. It makes it easy to deploy your static website to your favorite cloud services.
 
 ## Usage
 
