@@ -18,7 +18,7 @@ caisson
     .done(done)
 ```
 
-For a more complex example, let's say you want to deploy our site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean Droplet and install an nginx SSL proxy with your certificate:
+For a more complex example, let's say you want to deploy your site to S3 and serve it over HTTPS from `https://yourdomain.com`. The follwing will provision an S3 bucket, a CloudFront CDN, a Route53 DNS entry for `yourdomain.com`, provision a DigitalOcean Droplet and install an nginx SSL proxy with your certificate:
 
 ```js
 var caisson = Caisson.create()
@@ -40,12 +40,9 @@ Caisson ships with a command line utility that reads plugin data from `caisson.j
 
 ```json
 {
-  use: [
-    {
-      "name": "caisson-s3",
-      "options": {}
-    }
-  ]
+  "use": {
+    "caisson-s3": {}
+  }
 }
 ```
 
