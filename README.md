@@ -6,8 +6,6 @@ Caisson is a *pluggable* cloud deployment utility for static websites. It makes 
 
 ## Installation
 
-Install with npm:
-
 ```
 $ npm install caisson
 ```
