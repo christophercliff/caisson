@@ -4,7 +4,17 @@
 
 Caisson is a *pluggable* cloud deployment utility for static websites. It makes it easy to deploy your static website to your favorite cloud services.
 
-## JavaScript Usage
+## Installation
+
+Install with npm:
+
+```
+$ npm install caisson
+```
+
+## Usage
+
+### JavaScript
 
 Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, the following will provision an S3 bucket and upload your build directory:
 
@@ -34,9 +44,9 @@ caisson
     .done(done)
 ```
 
-## CLI Usage
+### CLI
 
-Caisson ships with a command line utility that reads plugin data from `caisson.json`:
+Caisson ships with a command line utility that reads from a configuration file, `caisson.json`:
 
 ```json
 {
@@ -47,41 +57,32 @@ Caisson ships with a command line utility that reads plugin data from `caisson.j
 ```
 
 ```
-$ caisson up
-$ caisson push
-```
-
-For a complete API reference, use:
-
-```
-$ caisson --help
+$ caisson up && caisson push
 ```
 
 ## Plugins
 
+Caisson has an extensible plugin architecture. See the [plugin documentation][#] to learn how to write your own plugins.
+
+### Available Plugins
+
 - [caisson-s3][s3]
 - [caisson-cloudfront][#]
 - [caisson-route53][#]
-- [caisson-digitalocean-ssl-proxy][#]
-- [caisson-dnsimple-ssl-cert][#]
+- caisson-digitalocean-ssl-proxy
+- caisson-dnsimple-ssl-cert
 
-## Installation
+## Documentation
 
-Install with npm:
+See [DOCUMENTATION][#].
 
-```
-$ npm install caisson
-```
+## Contributing
 
-## Tests
-
-```
-$ npm test
-```
+See [CONTRIBUTING][#].
 
 ## License
 
-MIT License, see [LICENSE][license] for details.
+MIT, see [LICENSE][license].
 
 [#]: #
 [license]: https://github.com/christophercliff/caisson/blob/master/LICENSE.md
