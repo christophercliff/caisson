@@ -1,4 +1,6 @@
-# Caisson
+# Caisson (deprecated)
+
+I recommend you use [AWS SDK for JavaScript in Node.js](https://aws.amazon.com/sdk-for-node-js/) or [AWS Command Line Interface](https://aws.amazon.com/cli/) instead.
 
 ## Deploy your static website to AWS
 
